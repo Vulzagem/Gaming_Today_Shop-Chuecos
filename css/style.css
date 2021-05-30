@@ -1,0 +1,504 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: 'Londrina Solid', cursive;
+}
+
+/* Colores */
+
+body{
+  background-color: #0A0E0F;
+  overflow-x: hidden;
+}
+
+h2{
+  color: #fff;
+}
+
+h3{
+  color: #fff;
+}
+
+h6{
+  color: #fff;
+}
+
+/* Tamaño de imagenes */
+
+img{
+  display: flex;
+  justify-content: center;
+  width: 170px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* Cards */
+
+#contenido{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+  .productos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    width: 350px;
+  }
+
+  .productos .box{
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+  }
+
+  .productos .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+  }
+
+  .productos .box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+  }
+
+  .productos .box:hover:before,
+  .productos .box:hover:after{
+   transform: skewX(0deg);
+   left: 20px;
+   width: calc(100% - 90px);
+}
+
+.productos .effect1:before,
+.productos .effect1:after{
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+.productos .effect2:before,
+.productos .effect2:after{
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+.productos .effect3:before,
+.productos .effect3:after{
+    background: linear-gradient(315deg, #4dff03, #ff0058);
+}
+
+.productos .box span{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.productos .box span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s linear infinite;
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.5);
+}
+
+.productos .box:hover span::before{
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+.productos .box span::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s linear infinite;
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.5);
+    animation-delay: -1s;
+}
+
+.productos .box:hover span::after{
+    bottom: -50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+@keyframes animate{
+    0%,100%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+ .productos .box .content{
+     position: relative;
+     left: 0;
+     padding: 20px 40px;
+     background: rgba(255, 255, 255, 0.05);
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     border-radius: 8px;
+     backdrop-filter: blur(10px);
+     transition: 0.5s;
+     color: #fff;
+     z-index: 1;
+}  
+
+.productos .box:hover .content{
+    left: -25px;
+    padding: 60px 40px;
+}
+
+.productos .box .content h2{
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.productos .box .content p{
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+
+.productos .box .content a{
+    display: inline-block;
+    font-size: 1.1em;
+    color: #111;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* Formulario */
+
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+}
+
+section::before{
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(#03a9f4, #ff0058);
+  border-radius: 50%;
+  transform: translate(-420px, -180px);
+}
+
+section::after{
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(#4dff03, #ff0058);
+  border-radius: 50%;
+  transform: translate(420px, 180px);
+}
+
+.formulario{
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+}
+
+.formulario::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -350px;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+
+.formulario h2{
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.formulario .row .col .inputBox{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+.formulario .row .col .inputBox input,
+.formulario .row .col .inputBox textarea{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+
+.formulario .row .col .inputBox .text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.formulario .row .col .inputBox input:focus + .text,
+.formulario .row .col .inputBox input:valid + .text,
+.formulario .row .col .inputBox textarea:focus + .text,
+.formulario .row .col .inputBox textarea:valid + .text{
+  
+  top: -35px;
+  left: -10px;
+}
+
+.formulario .row .col .inputBox .line{
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.formulario .row .col .inputBox input:focus ~ .line, 
+.formulario .row .col .inputBox input:valid ~ .line{
+
+  height: 60%;
+}
+
+.formulario .row .col .inputBox.textArea{
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+}
+
+.formulario .row .col .inputBox textarea:focus ~ .line, 
+.formulario .row .col .inputBox textarea:valid ~ .line{
+
+  height: 100%;
+}
+
+.formulario .row .col input[type="submit"]{
+  border: none;
+  padding: 10px 40px;
+  cursor: pointer;
+  outline: none;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+
+/* Titulo y nav */
+
+ header{
+  width: 100%;
+ position: fixed;
+ z-index: 2000;
+} 
+
+  nav {
+    background-color: black; 
+  }
+
+  div {
+    padding: 10px 10px 10px 10px; 
+  }
+
+  .titulo {
+      text-decoration: none;
+      color: white;
+  }
+
+  .titulo:hover{
+    transition: color .4s ease;
+    color: aqua;
+  }
+
+  .subTitulo{
+    padding-top: 150px;
+  }
+  
+  .form{
+    padding-top: 150px;
+  }
+
+  .errores{
+    display: none;
+    color: red;
+  }
+
+  /* Area del footer */
+  
+  footer {
+    background-color: black;
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: white;
+    
+    }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; }
+    .footer-content h3 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      text-transform: capitalize;
+      line-height: 3rem; }
+  
+  .footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px; }
+  
+  .socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0; }
+    .socials li {
+      margin: 0 10px; }
+  
+  .socials a {
+    text-decoration: none;
+    color: white; }
+    .socials a i {
+      font-size: 1.1rem;
+      transition: color .4s ease; }
+  
+  .socials a:hover i {
+    color: aqua; }
+  
+  .footer-bottom {
+    background: black;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;}
+    .footer-bottom p {
+      font-size: 14px;
+      word-spacing: 2px;
+      text-transform: capitalize; }
+  
+  .footer-bottom span {
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200; }
+
+    .shopingCar {
+      text-decoration: none;
+      color: white;
+      font-size: 2.1rem;
+      transition: color .4s ease;
+      padding-left: 40px;
+    }
+
+     a:hover i {
+      color: aqua;
+    }
+    
+    @media (max-width: 768px){
+      section::before{
+        transform: translate(-200px, -180px);
+      }
+      section::after{
+        transform: translate(200px, 180px);
+      }
+      .formulario{
+        padding: 20px;
+      }
+      .formulario h2{
+        font-size: 28px;
+      }
+    }
