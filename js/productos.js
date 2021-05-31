@@ -10,7 +10,7 @@ checkStorage()
 
 //Productos
 
-const games = [{ id: 1, nombre: "CoD Coldwar", imagen: "https://static.wikia.nocookie.net/callofduty/images/f/ff/Keyart_Promo_BOCW.jpg/revision/latest?cb=20200826190440", precio: 59 },
+const games = [{ id: 1, nombre: "CoD Coldwar", imagen: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2020/08/caratula-call-duty-black-ops-cold-war-2038143.png?itok=ywpD9uGS", precio: 59 },
 { id: 2, nombre: "Monster Hunter: World", imagen: "https://i.3djuegos.com/juegos/14998/monster_hunter_world/fotos/ficha/monster_hunter_world-3758225.jpg", precio: 20 },
 { id: 3, nombre: "Mortal Kombat 11", imagen: "https://static.wikia.nocookie.net/inmortalkombat/images/e/ea/Mk_cover.png/revision/latest?cb=20190110192227&path-prefix=es", precio: 40 },
 { id: 4, nombre: "Nier: Automata", imagen: "https://i0.wp.com/www.thedigitalquestioner.com/wp-content/uploads/2019/11/MV5BYzcxMmE2NjItNDc0ZS00NmY3LTk0ZDAtZGJmMDBmMzYyZDczXkEyXkFqcGdeQXVyMzM2MzI5MzU@._V1_SY1000_CR007091000_AL_.jpg?resize=532%2C750&ssl=1", precio: 40 },
